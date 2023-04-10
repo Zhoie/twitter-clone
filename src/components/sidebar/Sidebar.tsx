@@ -1,12 +1,13 @@
 import { BsBellFill, BsHouseFill } from 'react-icons/bs'
 import { FaUser } from 'react-icons/fa'
 import SidebarLogo from './SidebarLogo'
+import SidebarItem from './SidebarItem'
 
 export default function Sidebar() {
     const items = [
-        { label: 'Home', href: '/', BsHouseFill },
-        { label: 'Notifications', href: '/notifications', BsBellFill },
-        { label: 'Profile', href: '/use/123', FaUser },
+        { label: 'Home', href: '/', icon: BsHouseFill },
+        { label: 'Notifications', href: '/notifications', icon: BsBellFill },
+        { label: 'Profile', href: '/use/123', icon: FaUser },
     ]
 
     return (
@@ -14,7 +15,11 @@ export default function Sidebar() {
             <div className="flex flex-col items-end">
                 <div className="space-y-2 lg-w-[320px]">
                     <SidebarLogo />
-                    {/* <p className='text-white'>Sidebar</p> */}
+                    {items.map((item, index) => (
+
+                        <SidebarItem key={index} label={item.label} href={item.href} icon={item.icon} />
+
+                    ))}
                 </div>
             </div>
         </div>
