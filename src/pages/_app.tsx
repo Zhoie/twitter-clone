@@ -8,7 +8,7 @@ import RegisterModal from '@/components/modals/RegisterModal'
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      {/* <LoginModal /> */}
+       
       <RegisterModal />
       <Layout>
         <Component {...pageProps} />
