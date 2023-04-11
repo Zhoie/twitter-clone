@@ -53,10 +53,11 @@ export default function Modal({ isOpen, onClose, onSubmit, title, body, footer, 
                         </div>
                         <div className="flex flex-col gap-2 p-10">
                             <Button disabled={actionDisabled} label={actionLabel} secondary fullWidth large onClick={handleSubmit}/>
-                            
+                            {/* Footer */}
+                            {footer}
                         </div>
-                        {/* Footer */}
-                        {footer}
+                      
+                        
                     </div>
                 {/* End of Content */}
                 </div>
