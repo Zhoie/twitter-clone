@@ -4,7 +4,6 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
 import prisma from "../../../../libs/prismadb";
-import { throws } from 'assert';
 
 export default NextAuth({
 
@@ -43,7 +42,6 @@ export default NextAuth({
     debug:process.env.NODE_ENV === "development",
     session: {
         strategy: 'jwt',
-
     },
     jwt: {
         secret: process.env.NEXTAUTH_JWT_SECRET,
