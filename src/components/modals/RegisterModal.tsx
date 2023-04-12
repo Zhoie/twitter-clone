@@ -8,9 +8,13 @@ import Input from "../Input";
 import Modal from "../Modal";
 import axios from "axios";
 
+import register from "../../pages/api/register"
+
+
 export default function RegisterModal() {
     const loginModal = useLoginModal();
     const registerModal = useRegisterModal();
+
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -30,24 +34,28 @@ export default function RegisterModal() {
     const onSubmit = useCallback(async () => {
         try {
             setIsLoading(true);
-            await axios.post("/api/auth/register", {
+            
+            //          ../../pages/api/register
+            //for register.ts
+        
+            await axios.post("api/register", {
                 email,
                 password,
                 name,
                 username
-            })
+            });
 
             toast.success("Account created");
 
             signIn("credentials", {
                 email,
                 password,
-            })
+            });
             //TODO: Add register and login 
             registerModal.onClose();
         } catch (error) {
             console.log(error);
-            toast.error("Something went wrong");
+            toast.error("RegisterModal something went wrong");
         } finally {
             setIsLoading(false);
         }
