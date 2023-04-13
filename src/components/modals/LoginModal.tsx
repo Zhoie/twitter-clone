@@ -27,9 +27,9 @@ export default function LoginModal() {
             //TODO: ADD Login
             await signIn('credentials', {
                 email,
-                password,
+                password
             })
-            
+
             loginModal.onClose();
         } catch (error) {
             console.log(error);
